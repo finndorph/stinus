@@ -1,13 +1,7 @@
 #Random Notes - 4 days into the project
 
-= Introduction =
+"Real" IDM at Idp - ie. no persistence of actual data in Stinus - except for hashes of sent/received.
 
-Add your content here.
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+collary
+SyncModes
+  * Force - 
