@@ -2,6 +2,13 @@
 
 "Real" IDM at Idp - ie. no persistence of actual data in Stinus - except for hashes of sent/received.
 
-collary
+Stinus is one connection from the Idp - schema- and feedwise
+
+Writing is expensive - Reading is cheap
+
 SyncModes
-  * Force - 
+  * Force - just write record
+  * Hard - read, compare and write on change
+  * Soft - cmp with hash and write on change
+
+UpdateModes
