@@ -2,7 +2,12 @@
 
 "Real" IDM at Idp - ie. no persistence of actual data in Stinus - except for hashes of sent/received.
 
+Should Stinus keep hash of received data - schemachanges at Sp connector might invalidate?
+
 Stinus is one connection from the Idp - schema- and feedwise
+Stinus is Idp push only
+
+But multiple Idp feeds to one Sp should be supported - poor mans VO eg. for xtra attributes not in main directory
 
 Writing is expensive - Reading is cheap
 
@@ -12,3 +17,5 @@ SyncModes
   * Soft - cmp with hash and write on change
 
 UpdateModes
+  * Partial, Full
+  * Ldap: replace specific values?
