@@ -2,6 +2,10 @@
 
 "Real" IDM at Idp - ie. no persistence of actual data in Stinus - except for hashes of sent/received.
 
+Stinus can run at Idp or at Fed Operator.
+
+Repository of connectors - also for use outside Stinus?
+
 Should Stinus keep hash of received data - schemachanges at Sp connector might invalidate?
 
 Stinus is one connection from the Idp - schema- and feedwise
