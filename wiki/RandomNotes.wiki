@@ -33,7 +33,9 @@ UpdateModes
   * Ldap: replace specific values?
 
 Common Cannonical Schema - ???
+Support for specific schemas (pass-thru) btw. Idp and Sp.
 
 Issues:
 
-  * Google 
+  * Google can do batch reads - but recs come back in random order
+  * 
