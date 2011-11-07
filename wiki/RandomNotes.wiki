@@ -13,6 +13,8 @@ Stinus is Idp push only
 
 But multiple Idp feeds to one Sp should be supported - poor mans VO eg. for xtra attributes not in main directory
 
+Stinus can feed a pseudo Sp - with storage - for aggreation which can then be feed into Stinus again.
+
 Writing is expensive - Reading is cheap
 
 SyncModes
