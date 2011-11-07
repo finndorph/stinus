@@ -9,7 +9,7 @@ Repository of connectors - also for use outside Stinus?
 Should Stinus keep hash of received data - schemachanges at Sp connector might invalidate?
 
 Stinus is one connection from the Idp - schema- and feedwise
-Stinus is Idp push only
+Stinus is Idp push only - but can pull from Idp if needed. Ie. no pull from Sp.
 
 But multiple Idp feeds to one Sp should be supported - poor mans VO eg. for xtra attributes not in main directory
 
