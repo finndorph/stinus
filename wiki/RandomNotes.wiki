@@ -17,6 +17,12 @@ Stinus can feed a pseudo Sp - with storage - for aggreation which can then be fe
 
 Writing is expensive - Reading is cheap
 
+Changes are rare
+
+Stinus supports partial feeds and event driven feeds
+
+Standard connectors for common schemas eg. AD (and ldap?)
+
 SyncModes
   * Force - just write record
   * Hard - read, compare and write on change
@@ -25,3 +31,9 @@ SyncModes
 UpdateModes
   * Partial, Full
   * Ldap: replace specific values?
+
+Common Cannonical Schema - ???
+
+Issues:
+
+  * Google 
