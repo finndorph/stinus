@@ -41,5 +41,5 @@ Issues:
 
 Random ideas:
 
-  * UnboundID Sync Server data obfuscation ie. read prod data -> test data
+  * Obfuscation a la UnboundID Sync Server data ie. read prod data and convert to ubfuscated test data
   * 
