@@ -38,4 +38,8 @@ Support for specific schemas (pass-thru) btw. Idp and Sp.
 Issues:
 
   * Google can do batch reads - but recs come back in random order
+
+Random ideas:
+
+  * UnboundID Sync Server data obfuscation ie. read prod data -> test data
   * 
