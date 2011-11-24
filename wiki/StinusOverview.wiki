@@ -80,7 +80,7 @@ provided sink.
 
 The configuration tool for Stinus. Runs on a federation server
 and have access to `[`repo`]` but, persists all configuration
-data to [persistence].
+data to `[`persistence`]`.
 
 * Stinus `[`feed`]`
 
