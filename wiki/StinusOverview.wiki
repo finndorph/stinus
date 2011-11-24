@@ -51,6 +51,8 @@ of configuration and access to the same connectors.
 
 === Stinus `[`the software`]` architecture ===
 
+[http://code.google.com/p/stinus/source/browse/wiki/stinus.png]
+
 Stinus consists of different services:
 
 * Stinus `[`core`]`
