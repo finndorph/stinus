@@ -135,7 +135,7 @@ Stinus requirements seems too large considering:
 
  * the don't persist anything centrally requirement for Stinus
 
- * our limited experience with developing in - and run java
+ * our limited experience with developing in - and running java
 
  * the question of what value the Stinus use case will bring to the existing project
 
