@@ -1,11 +1,11 @@
-## Stinus Description
+== Stinus Description ==
 
-Stinus [the project] is a Geant 3 supported project at wayf.dk.
-Its goal is to develop an opensource package - Stinus [the
-software] - which will allow a federation to run a federated
-provisoning service - Stinus [the service].
+Stinus `[`the project`]` is a Geant 3 supported project at wayf.dk.
+Its goal is to develop an opensource package - Stinus `[`the
+software`]` - which will allow a federation to run a federated
+provisoning service - Stinus `[`the service`]`.
 
-Stinus [the service] will make it possible for an identity
+Stinus `[`the service`]` will make it possible for an identity
 provider in a federation to provision users and groups to
 supported service providers using only one "feed" to Stinus.
 
@@ -17,17 +17,17 @@ needed. Optionally the identity provider will be able to do additional
 configuration eg. filtering 
 the users/groups and values that will be provisioned.
 
-Stinus [the service] will function as a multiplexer for
+Stinus `[`the service`]` will function as a multiplexer for
 concurrently synchronizing multiple service providers from one
 feed and as a repository for general or service provider
 specific connectors.
 
-Stinus [the service] will not persist any user/group or
+Stinus `[`the service`]` will not persist any user/group or
 configuration data at the federation level, except for identity
 provider authentication configuration and optionally hashes of
 object records for performance reasons.
 
-Stinus [the service] only supports identity provider initiated
+Stinus `[`the service`]` only supports identity provider initiated
 provisioning - ie. the data is always pushed to Stinus at the
 identity provider's discretion.
 
@@ -37,76 +37,76 @@ in the identity providers directory. Feed-back feeds for
 indentity provider or inter-identity provider attribute
 aggreation is also supported.
 
-Stinus [the software] will if at all possible support existing
+Stinus `[`the software`]` will if at all possible support existing
 frameworks for connectors. Specifically the java connectors from
 Suns 'Identity Connectors Framework' now?
 'http://code.google.com/p/connid/' and/or
 http://openicf.forgerock.org/ used by Sycope, Midtpoint, openIDM
 ... will be supported.
 
-Although Stinus [the software] will be designed for federation
+Although Stinus `[`the software`]` will be designed for federation
 use - ie. no persistence - it will be available for running on
 an identity provider's premises - with the same ease of
 configuration and access to the same connectors.
 
-### Stinus [the software] architecture
+=== Stinus `[`the software`]` architecture ===
 
 Stinus consists of different services:
 
-* Stinus [core]
+* Stinus `[`core`]`
 
   The central Stinus server which services provisoning streams from identity providers and multiplexes
-  to the configured service providers. [core] sets up and tears down the necessary connectors for
+  to the configured service providers. `[`core`]` sets up and tears down the necessary connectors for
   connecting to the service providers. Runs on a federation server. 
   
-* Stinus [connectors]
+* Stinus `[`connectors`]`
 
-  The actual connectors. Are clients of [core] and communicates with [core] using a language
+  The actual connectors. Are clients of `[`core`]` and communicates with `[`core`]` using a language
   agnostic protocol (pt. gearman). Non-Stinus-native connectors might need a small wrapper. 
 
-* Stinus [logger]
+* Stinus `[`logger`]`
 
-  A web service - conforming to the [logger] API which allows the different Stinus packages to log to an identity provider provided sink.
+  A web service - conforming to the `[`logger`]` API which allows the different Stinus packages to log to an identity provider provided sink.
   
-* Stinus [config]
+* Stinus `[`config`]`
 
-  The configuration tool for Stinus. Runs on a federation server and have access to [repo] but, persists
+  The configuration tool for Stinus. Runs on a federation server and have access to `[`repo`]` but, persists
   all configuration data to [persistence]. 
 
-* Stinus [feed]
+* Stinus `[`feed`]`
 
   The gateway between the identity providers directory (AD/ldap) and [core]. A typical identity
-  provider will not allow outside access to its directory so [feed] will run inside the identity
-  provider, read from ad/ldap and push data to [core]. [feed] will eventually be available in
+  provider will not allow outside access to its directory so `[`feed`]` will run inside the identity
+  provider, read from ad/ldap and push data to `[`persistence`]` will eventually be available in
   .Net, Java and php for easy deployment in the identity providers current infrastructure.
 
-* Stinus [repo]
+* Stinus `[`repo`]`
 
   The repository for connectors and configuration metadata for connectors. Might be common for all
   Stinus installations - both in federations and at identity providers.
   
-* Stinus [persistence]
+* Stinus `[`persistence`]`
 
-  A web service - conforming to the [persistence] API - of the identity provider's choice. It allows
+  A web service - conforming to the `[`persistence`]` API - of the identity provider's choice. It allows
   Stinus to run as a federation service, while at the same time only persist any privacy critical 
   data at a place chosen by the identity provider.
   
-### Stinus [the POC] implementing details
+=== Stinus `[`the POC`]` implementing details ===
 
-Stinus [the software] - specifically [core] - will initially be developed in php.
+Stinus `[`the software] - specifically [core`]` - will initially be developed in php.
 
 We will to the greatest extend try to leverage exisisting APIs and existing implentations of the APIs
 for the Stinus services.
 
-The intra [core] messagebus will be Gearman.
+The intra `[`core`]` messagebus will be Gearman.
 
 The POC will demonstrate provisoning of users/groups from a Danish university to Google Apps for Education
 using AD as the source directory and  (one of) the existing ICP connectors for Google.
 
-### Stinus - why starting from scratch / why php
+=== Stinus - why starting from scratch / why php ===
 
-This is the 2nd time Stinus [the project] has been through the initial consideration about starting from scratch
-in php or base Stinus [the software] on an existing open source IDM - specifically Syncope, which Surfnet has choosen
+This is the 2nd time Stinus `[`the project`]` has been through the initial consideration about starting from scratch
+in php or base Stinus `[`the software`]` on an existing open source IDM - specifically Syncope, which Surfnet has choosen
 for their project.
 
 Both Jacob Christiansen (jach@wayf.dk) and I have independently reached the same conclusion:
@@ -121,7 +121,3 @@ considering:
  * the resources available to Stinus (0.75 fte)
  * Wayf's exprience in developing in and running php
  
-
-  
-
-
