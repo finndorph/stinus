@@ -51,7 +51,7 @@ of configuration and access to the same connectors.
 
 === STINUS `[`the software`]` architecture ===
 
-[http://STINUS.googlecode.com/svn/wiki/STINUS.png]
+[http://stinus.googlecode.com/svn/wiki/STINUS.png]
 
 STINUS consists of different services:
 
@@ -106,7 +106,7 @@ federation service, while at the same time only store any
 privacy critical data at a place chosen by the identity
 provider.
 
-=== STINUS POC implementing details ===
+=== STINUS Proof of Concept implementing details ===
 
 STINUS `[`the software] - specifically [core`]` - will initially
 be developed in php.
