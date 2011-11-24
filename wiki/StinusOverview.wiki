@@ -1,9 +1,9 @@
 == Stinus Description ==
 
 Stinus `[`the project`]` is a Geant 3 supported project at
-wayf.dk. Its goal is to develop an opensource package - Stinus
+wayf.dk. Its goal is to develop an open source package - Stinus
 `[`the software`]` - which will allow a federation to run a
-federated provisoning service - Stinus `[`the service`]`.
+federated provisioning service - Stinus `[`the service`]`.
 
 Stinus `[`the service`]` will make it possible for an identity
 provider in a federation to provision users and groups to
@@ -32,10 +32,10 @@ initiated provisioning - ie. the data is always pushed to Stinus
 at the identity provider's discretion.
 
 Stinus does support multiple feeds from a single identity
-provider eg. to allow aggreation of data that is not aggreated
+provider eg. to allow aggregation of data that is not aggregated
 in the identity providers directory. Feed-back feeds for
-indentity provider or inter-identity provider attribute
-aggreation is also supported.
+identity provider or inter-identity provider attribute
+aggregation is also supported.
 
 Stinus `[`the software`]` will if at all possible support
 existing frameworks for connectors. Specifically the java
@@ -55,7 +55,7 @@ Stinus consists of different services:
 
 * Stinus `[`core`]`
 
-The central Stinus server which services provisoning streams
+The central Stinus server which services provisioning streams
 from identity providers and multiplexes to the configured
 service providers. `[`core`]` sets up and tears down the
 necessary connectors for connecting to the service providers.
@@ -109,12 +109,12 @@ provider.
 Stinus `[`the software] - specifically [core`]` - will initially
 be developed in php.
 
-We will to the greatest extend try to leverage exisisting APIs
-and existing implentations of the APIs for the Stinus services.
+We will to the greatest extend try to leverage existing APIs
+and existing implementations of the APIs for the Stinus services.
 
-The intra `[`core`]` messagebus will be Gearman.
+The intra `[`core`]` message bus will be Gearman.
 
-The POC will demonstrate provisoning of users/groups from a
+The POC will demonstrate provisioning of users/groups from a
 Danish university to Google Apps for Education using AD as the
 source directory and  (one of) the existing ICP connectors for
 Google.
@@ -124,13 +124,13 @@ Google.
 This is the 2nd time Stinus `[`the project`]` has been through
 the initial consideration about starting from scratch in php or
 base Stinus `[`the software`]` on an existing open source IDM -
-specifically Syncope, which Surfnet has choosen for their
+specifically Syncope, which Surfnet has chosen for their
 project.
 
 Both Jacob Christiansen (jach@wayf.dk) and I have independently
 reached the same conclusion:
 
-The effort to adapt an existing large java sourcebase to fit the
+The effort to adapt an existing large java source base to fit the
 Stinus requirements seems too large considering:
 
  * the don't persist anything centrally requirement for Stinus
@@ -143,4 +143,4 @@ Stinus requirements seems too large considering:
 
  * the resources available to Stinus (0.75 fte)
 
- * Wayf's exprience in developing in and running php
+ * Wayf's experience in developing in and running php
