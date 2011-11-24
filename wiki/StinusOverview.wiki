@@ -35,7 +35,7 @@ STINUS does support multiple feeds from a single identity
 provider eg. to allow aggregation of data that is not aggregated
 in the identity providers directory. Feed-back feeds for
 identity provider or inter-identity provider attribute
-aggregation is also supported.
+aggregation are also supported.
 
 STINUS `[`the software`]` will if at all possible support
 existing frameworks for connectors. Specifically the java
@@ -85,10 +85,10 @@ data to `[`storage`]`.
 * STINUS `[`feed`]`
 
 The gateway between the identity providers directory (AD/ldap)
-and ^`[`core`]`. A typical identity provider will not allow
+and `[`core`]`. A typical identity provider will not allow
 outside access to its directory so `[`feed`]` will run inside
 the identity provider, read from ad/ldap and push data to
-`[`storage`]` will eventually be available in .Net, Java and
+`[`core`]`. `[`feed' ]` will eventually be available in .Net, Java and
 php for easy deployment in the identity providers current
 infrastructure.
 
