@@ -88,7 +88,7 @@ The gateway between the identity providers directory (AD/ldap)
 and `[`core`]`. A typical identity provider will not allow
 outside access to its directory so `[`feed`]` will run inside
 the identity provider, read from ad/ldap and push data to
-`[`core`]`. `[`feed' ]` will eventually be available in .Net, Java and
+`[`core`]`. `[`feed`]` will eventually be available in .Net, Java and
 php for easy deployment in the identity providers current
 infrastructure.
 
@@ -135,7 +135,7 @@ reached the same conclusion:
 The effort to adapt an existing large java source base to fit the
 STINUS requirements seems too large considering:
 
- * the don't store anything centrally requirement for STINUS
+ * the "don't store anything centrally" requirement for STINUS
 
  * our limited experience with developing in - and running java
 
