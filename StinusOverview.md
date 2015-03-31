@@ -1,0 +1,148 @@
+## STINUS Description ##
+
+STINUS `[`the project`]` is a Geant3-JRA-T2 supported project at
+wayf.dk. Its goal is to develop an open source package - STINUS
+`[`the software`]` - which will allow a federation to run a
+federated provisioning service - STINUS `[`the service`]`.
+
+STINUS `[`the service`]` will make it possible for an identity
+provider in a federation to provision users and groups to
+supported service providers using only one "feed" to STINUS.
+
+It should be ridiculously easy for an identity provider to
+establish and configure provisioning to a service provider - a
+checkmark on a webpage + identity provider authentication
+towards the service provider is all that is needed. Optionally
+the identity provider will be able to do additional
+configuration eg. filtering the users/groups and values that
+will be provisioned.
+
+STINUS `[`the service`]` will function as a multiplexer for
+concurrently synchronizing multiple service providers from one
+feed and as a repository for general or service provider
+specific connectors.
+
+STINUS `[`the service`]` will not store any user/group or
+configuration data at the federation level, except for identity
+provider authentication configuration and optionally hashes of
+object records for performance reasons.
+
+STINUS `[`the service`]` only supports identity provider
+initiated provisioning - ie. the data is always pushed to STINUS
+at the identity provider's discretion.
+
+STINUS does support multiple feeds from a single identity
+provider eg. to allow aggregation of data that is not aggregated
+in the identity providers directory. Feed-back feeds for
+identity provider or inter-identity provider attribute
+aggregation are also supported.
+
+STINUS `[`the software`]` will if at all possible support
+existing frameworks for connectors. Specifically the java
+connectors from Suns 'Identity Connectors Framework' now?
+'http://code.google.com/p/connid/' and/or
+http://openicf.forgerock.org/ used by Sycope, Midtpoint, openIDM
+... will be supported.
+
+Although STINUS `[`the software`]` will be designed for
+federation use - ie. no storage - it will be available for
+running on an identity provider's premises - with the same ease
+of configuration and access to the same connectors.
+
+### STINUS `[`the software`]` architecture ###
+
+![http://stinus.googlecode.com/svn/wiki/stinus.png](http://stinus.googlecode.com/svn/wiki/stinus.png)
+
+STINUS consists of different services:
+
+**STINUS `[`core`]`**
+
+The central STINUS server which services provisioning streams
+from identity providers and multiplexes to the configured
+service providers. `[`core`]` sets up and tears down the
+necessary connectors for connecting to the service providers.
+Runs on a federation server.
+
+**STINUS `[`connectors`]`**
+
+The actual connectors. Are clients of `[`core`]` and
+communicates with `[`core`]` using a language agnostic protocol
+(pt. gearman). Non-STINUS-native connectors might need a small
+wrapper.
+
+**STINUS `[`logger`]`**
+
+A web service - conforming to the `[`logger`]` API which allows
+the different STINUS packages to log to an identity provider
+provided sink.
+
+**STINUS `[`config`]`**
+
+The configuration tool for STINUS. Runs on a federation server
+and have access to `[`repo`]` but, stores all configuration
+data to `[`storage`]`.
+
+**STINUS `[`feed`]`**
+
+The gateway between the identity providers directory (AD/ldap)
+and `[`core`]`. A typical identity provider will not allow
+outside access to its directory so `[`feed`]` will run inside
+the identity provider, read from ad/ldap and push data to
+`[`core`]`. `[`feed`]` will eventually be available in .Net, Java and
+php for easy deployment in the identity providers current
+infrastructure.
+
+**STINUS `[`repo`]`**
+
+The repository for connectors and configuration metadata for
+connectors. Might be common for all STINUS installations - both
+in federations and at identity providers.
+
+**STINUS `[`storage`]`**
+
+A web service - conforming to the `[`storage`]` API - of the
+identity provider's choice. It allows STINUS to run as a
+federation service, while at the same time only store any
+privacy critical data at a place chosen by the identity
+provider.
+
+### STINUS Proof of Concept implementing details ###
+
+STINUS `[`the software] - specifically [core`]` - will initially
+be developed in php.
+
+We will to the greatest extend try to leverage existing APIs
+and existing implementations of the APIs for the STINUS services.
+
+The intra `[`core`]` message bus will be Gearman.
+
+The POC will demonstrate provisioning of users/groups from a
+Danish university to Google Apps for Education using AD as the
+source directory and  (one of) the existing ICP connectors for
+Google.
+
+### STINUS - why starting from scratch / why php ###
+
+This is the 2nd time STINUS `[`the project`]` has been through
+the initial consideration about starting from scratch in php or
+base STINUS `[`the software`]` on an existing open source IDM -
+specifically Syncope, which Surfnet has chosen for their
+project.
+
+Both Jacob Christiansen (jach@wayf.dk) and I have independently
+reached the same conclusion:
+
+The effort to adapt an existing large java source base to fit the
+STINUS requirements seems too large considering:
+
+  * the "don't store anything centrally" requirement for STINUS
+
+  * our limited experience with developing in - and running java
+
+  * the question of what value the STINUS use case will bring to the existing project
+
+  * the ability to use the existing connector framework from Syncope et. al.
+
+  * the resources available to STINUS (0.75 fte)
+
+  * Wayf's experience in developing in and running php
